@@ -190,7 +190,7 @@ export const Register = () => {
 							}
 							id="flexCheckDefault"
 						/>
-						<label class="form-check-label" htmlFor="flexCheckDefault">
+						<label className="form-check-label" htmlFor="flexCheckDefault">
 							I agree the terms and conditions
 						</label>
 					</div>
