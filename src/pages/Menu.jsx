@@ -3,6 +3,8 @@ import { Container, Tab, Tabs } from "react-bootstrap";
 import { CheckBalance } from "../components/CheckBalance";
 import { FundTransfer } from "../components/FundTransfer";
 import { OpenNewFD } from "../components/OpenNewFD";
+import {ChangeAtmPin} from "../components/ChangeAtmPin"
+import {Events} from "../components/Events";
 
 export const Menu = () => {
 	return (
@@ -24,8 +26,11 @@ export const Menu = () => {
 					<Tab eventKey="open-new-fd" title="Open New FD">
 						<OpenNewFD />
 					</Tab>
+					<Tab eventKey="change-atm-pin" title="Change Atm Pin">
+						<ChangeAtmPin/>
+					</Tab>
 					<Tab eventKey="events" title="Events">
-						<h1>Events</h1>
+						<Events/>
 					</Tab>
 					<Tab eventKey="logout" title="Logout">
 						<h1>Logout</h1>

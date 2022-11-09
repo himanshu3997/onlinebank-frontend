@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+  
 
 const defaultState = {
 	fromAccountNumber: "",
@@ -22,6 +25,11 @@ export const OpenNewFD = () => {
 		event.preventDefault();
 
 		console.log(fdData);
+		if(fdData.fromAccountNumber.trim()==='' || fdData.fdProduct.value==='0' || fdData.fdPeriod.value==='0' ||
+		fdData.amount.trim() ==='' || fdData.amount===0 || fdData.conformation===false)
+			toast.error("please enter all the details")
+		else
+			toast.success("your FD is created successfully !");
 
 		// submit form api
 
@@ -50,7 +58,7 @@ export const OpenNewFD = () => {
 						/>
 					</div>
 
-					<div className="mb-3 d-flex align-items-center justify-content-around">
+					<div className="mb-3 d-flex align-items-left justify-content-around">
 						<label className="form-label" htmlFor="fdProduct">
 							FD product
 						</label>
@@ -60,17 +68,22 @@ export const OpenNewFD = () => {
 							aria-label="Question select"
 							name="fdProduct"
 							onChange={(e) => handleChange(e)}
-							style={{ maxWidth: "80%" }}
+							style={{ maxWidth: "80%"}}
 						>
 							<option value="0">Select FD Product</option>
-							<option value="1">One</option>
-							<option value="2">Two</option>
-							<option value="3">Three</option>
+							<option value="1">Standard</option>
+							<option value="2">Corporate</option>
+							<option value="3">Cumulative</option>
+							<option value="4">Tax Saving</option>
+							<option value="5">Senior Citizen</option>
 						</select>
 					</div>
 
-					<div className="mb-3 d-flex align-items-center justify-content-around">
-						<label className="form-label" htmlFor="fdPeriod">
+					<div className="mb-3 d-flex align-items-left justify-content-around">
+						<label className="form-label" 
+										htmlFor="fdPeriod"
+		
+										>
 							FD Period
 						</label>
 						{/* this might be rendered dynamically ?? */}
@@ -78,20 +91,22 @@ export const OpenNewFD = () => {
 							className="form-select"
 							aria-label="Question select"
 							name="fdPeriod"
+
 							onChange={(e) => handleChange(e)}
-							style={{ maxWidth: "80%" }}
+							style={{ maxWidth: "80%", alignItems: "right" }}
 						>
 							<option value="0">Select FD Period</option>
-							<option value="1">Savings</option>
-							<option value="2">Current</option>
-							<option value="3">FD</option>
+							<option value="1">3 months</option>
+							<option value="2">6 months</option>
+							<option value="3">9 months</option>
+							<option value="4">1 Year</option>
 						</select>
 					</div>
 
-					<div className="mb-3 d-flex align-items-center justify-content-around">
+					<div className="mb-3 d-flex align-items-left justify-content-around">
 						<label className="form-label" htmlFor="amount">
 							Amount
-						</label>
+					</label>
 
 						<input
 							type="text"
@@ -131,6 +146,9 @@ export const OpenNewFD = () => {
 						>
 							Transfer
 						</button>
+						<ToastContainer 
+						position="bottom-center"
+						/>
 					</div>
 				</form>
 			</Container>

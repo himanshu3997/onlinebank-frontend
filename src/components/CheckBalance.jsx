@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 
 const initialState = {
-	name: "Himanshu",
-	currentBalance: "1000",
+	name: "",
+	currentBalance: "",
 	transactionDetails: [
 		{
 			id: "1",
@@ -57,6 +57,8 @@ export const CheckBalance = () => {
 		// get the user details from a api hit and set the user details
 	}, []);
 
+	
+
 	return (
 		<Container className="p-3">
 			<Container className="p-3">
@@ -74,7 +76,6 @@ export const CheckBalance = () => {
 								id="name"
 								name="name"
 								placeholder={userDetails.name}
-								disabled
 							/>
 						</div>
 						<div className="mb-3 d-flex flex-column align-items-start justify-content-start">
@@ -87,7 +88,6 @@ export const CheckBalance = () => {
 								className="form-control"
 								id="name"
 								name="name"
-								disabled
 								placeholder={userDetails.currentBalance}
 							/>
 						</div>

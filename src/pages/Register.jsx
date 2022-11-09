@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const defaultState = {
 	name: "",
@@ -18,7 +20,7 @@ export const Register = () => {
 
 	const handleChange = (event) => {
 		setUserData((prev) => {
-			return { ...prev, [event.target.name]: event.target.value };
+			return { ...prev, [event.target.name]: event.target.value };   
 		});
 	};
 
@@ -26,6 +28,16 @@ export const Register = () => {
 		event.preventDefault();
 
 		console.log(userData);
+		if(userData.name.trim()==="" || userData.username.trim()==='' || userData.password.trim()==='' ||
+		userData.lastname.trim()==="" || userData.securityQuestionAnswer.trim()==="" || userData.securityQuestionNumber.trim()==="" ||
+		userData.conformation===false || userData.accountType.toLowerCase()!==("savings" || "current")){
+			toast.error("Please fill all the details");
+			return;
+		}
+		else{
+			toast.success("User registered successfully");
+		}
+
 
 		// submit form api
 
@@ -69,7 +81,7 @@ export const Register = () => {
 							onChange={(e) => handleChange(e)}
 							value={userData.middlename}
 						/>
-					</div>
+				</div>
 
 					<div className="mb-3 d-flex align-items-center justify-content-around">
 						<label className="form-label" htmlFor="lastname">
@@ -203,6 +215,9 @@ export const Register = () => {
 						>
 							Register
 						</button>
+						<ToastContainer
+							position="bottom-center"
+						/>
 					</div>
 				</form>
 			</Container>
