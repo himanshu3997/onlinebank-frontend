@@ -4,7 +4,7 @@ import { CheckBalance } from "../components/CheckBalance";
 import { FundTransfer } from "../components/FundTransfer";
 import { OpenNewFD } from "../components/OpenNewFD";
 import {ChangeAtmPin} from "../components/ChangeAtmPin"
-import {Events} from "../components/Events";
+import Events from "../components/Events";
 
 export const Menu = () => {
 	return (

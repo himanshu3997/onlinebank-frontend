@@ -16,8 +16,7 @@ import {
   Dropdown,
 } from "reactstrap";
 
-export
-const Event = () => {
+export const Event = () => {
     const [name, setname] = useState("");
     const [address, setaddress] = useState("");
     const [mobileno, setmobileno] = useState("");

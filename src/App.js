@@ -7,14 +7,15 @@ import {Home} from "./pages/Home";
 
 function App() {
 	return (
-			// <Routes>
-			// 	{/* <Route exact path="/" element={<Home/>} /> */}
-			// 	<Route path="/" element={<Home/>} />
-			// 	<Route path="/login" element={<Login/>} />
-			// 	<Route path="/register" element={<Register />} />
-			// 	<Route path="/menu" element={<Menu />} />
-			// </Routes>
-			<Home/>
+		<BrowserRouter>
+			<Routes>
+				{/* <Route exact path="/" element={<Home/>} /> */}
+				<Route exact path="/" element={<Home/>} />
+				<Route exact path="/login" element={<Login/>} />
+				<Route exact path="/register" element={<Register />} />
+				<Route exact path="/menu" element={<Menu />} />
+			</Routes>
+		</BrowserRouter>
 	);
 }
 

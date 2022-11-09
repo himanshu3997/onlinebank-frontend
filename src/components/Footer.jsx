@@ -38,11 +38,11 @@ export const Footer = () => {
             <MDBCol md='3' lg='4' xl='3' className='mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>
                 <MDBIcon color='secondary' icon='gem' className='me-3' />
-                Company name
+               SoftBank Private Ltd.
               </h6>
               <p>
-                Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit
-                amet, consectetur adipisicing elit.
+                softbank is a multinational Bank corporation based in Newyork, USA.
+                It provides banking services in USA and its subsidiaries.
               </p>
             </MDBCol>
 
@@ -50,22 +50,27 @@ export const Footer = () => {
               <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
               <p>
                 <a href='#!' className='text-reset'>
-                  Angular
+                Savings Accounts
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  React
+                Credit Cards
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Vue
+                  Home Loan
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Laravel
+                Personal Loan
+                </a>
+              </p>
+              <p>
+                <a href='#!' className='text-reset'>
+                Fixed Deposit
                 </a>
               </p>
             </MDBCol>
@@ -118,7 +123,7 @@ export const Footer = () => {
       <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
         © 2021 Copyright:
         <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
+           www.softbank.com
         </a>
       </div>
     </MDBFooter>
