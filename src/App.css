@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.HomeNavBar{
+  text-decoration: none;
+  color: black;
+  padding:1em;
+}
+
+.HomeNavBar:hover{
+  text-decoration: none;
+  color: gray;
+}
